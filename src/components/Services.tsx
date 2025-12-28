@@ -22,18 +22,18 @@ const services = [
   {
     icon: Lightbulb,
     number: '03',
-    title: '新規事業開発支援',
-    subtitle: 'New Business Development',
-    description: 'AIを活用した新規事業のコンセプト設計から技術実装までを一貫サポート。マーケット分析、PoC開発、MVP構築を通じて、ビジネスアイデアを素早く形にします。',
-    features: ['AI活用コンサルティング', 'PoC/MVP開発', 'ビジネスモデル設計', '技術ロードマップ策定'],
+    title: 'DX・新規事業支援',
+    subtitle: 'DX & Business Development',
+    description: '既存業務のデジタル変革から、AIを活用した新規事業の立ち上げまで一貫サポート。現状分析、PoC開発、本格導入まで伴走し、確実な成果創出を支援します。',
+    features: ['DX戦略コンサルティング', '業務プロセス改善', 'PoC/MVP開発', '技術ロードマップ策定'],
   },
   {
     icon: Workflow,
     number: '04',
-    title: '業務自動化・DX推進',
-    subtitle: 'Business Automation & DX',
-    description: 'Google Workspace、業務システムとAIを連携させた自動化ソリューション。ルーティンワークの削減、データ処理の効率化、レポート自動生成などで生産性を大幅に向上させます。',
-    features: ['Google Workspace連携', 'ワークフロー自動化', 'データ処理自動化', 'レポート自動生成'],
+    title: '業務自動化・効率化',
+    subtitle: 'Business Automation',
+    description: '既存の業務システムとAIを連携させ、日々の業務を自動化。ルーティンワークの削減、データ処理の効率化、レポート自動生成で、現場の生産性を大幅に向上させます。',
+    features: ['既存システム連携', 'ワークフロー自動化', 'データ処理自動化', 'Google Workspace活用'],
   },
 ]
 
@@ -64,9 +64,9 @@ export default function Services() {
             課題を解決する
           </h2>
           <p className="text-navy-600 max-w-2xl mx-auto leading-relaxed">
-            最新のAI技術と実践的なノウハウを組み合わせ、
+            新規事業の立ち上げから既存業務のDX推進まで、
             <br className="hidden md:block" />
-            お客様のビジネス課題に最適なソリューションを提供します。
+            最新のAI技術で御社のビジネス変革を支援します。
           </p>
         </motion.div>
 
@@ -156,7 +156,7 @@ export default function Services() {
             href="#contact"
             className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-navy-600 to-navy-700 text-white font-medium rounded-full hover:from-navy-500 hover:to-navy-600 transition-all duration-300 hover:shadow-xl hover:shadow-navy-500/30 hover:-translate-y-1"
           >
-            <span>無料相談はこちら</span>
+            <span>お問い合わせ</span>
             <ArrowUpRight className="w-4 h-4" />
           </a>
         </motion.div>

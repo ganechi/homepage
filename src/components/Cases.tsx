@@ -1,47 +1,39 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Building2, GraduationCap, Factory, Briefcase, ArrowUpRight, TrendingUp } from 'lucide-react'
+import { Building2, GraduationCap, Factory, Briefcase, ArrowUpRight } from 'lucide-react'
 
 const cases = [
   {
     icon: Building2,
     category: 'IT・SaaS',
     title: 'AIチャットボット開発',
-    description: 'カスタマーサポート向けAIチャットボットを開発。GPT-4とRAGを組み合わせ、社内ナレッジベースを活用した高精度な自動応答システムを構築。問い合わせ対応時間を70%削減。',
-    results: ['対応時間 70%削減', '顧客満足度 +15%', '24時間対応実現'],
-    tags: ['ChatGPT', 'RAG', 'Python'],
-    metric: '70%',
+    description: 'カスタマーサポート向けAIチャットボットを開発。GeminiとRAGを組み合わせ、社内ナレッジベースを活用した高精度な自動応答システムを構築。',
+    tags: ['Gemini', 'RAG', 'TypeScript', 'React'],
     metricLabel: '対応時間削減',
+  },
+  {
+    icon: Factory,
+    category: 'スタートアップ',
+    title: '新規事業プロダクトの企画・開発',
+    description: 'AIを活用した新規事業のコンセプト設計からプロダクト開発まで伴走支援。市場調査、MVP開発、ユーザー検証を経て、アイデアを素早くプロダクトとして形にし、事業化を加速。',
+    tags: ['新規事業', 'MVP開発', 'AI活用'],
+    metricLabel: '事業化支援',
   },
   {
     icon: GraduationCap,
     category: '教育機関',
     title: '成績処理システム自動化',
     description: '教育機関向けの成績処理・レポート生成システムを開発。Google Spreadsheetと連携し、複雑な成績計算から通知表作成までを完全自動化。教職員の業務負担を大幅に軽減。',
-    results: ['作業時間 80%削減', '計算ミス 0件', '年間200時間節約'],
     tags: ['GAS', 'Google Workspace', '自動化'],
-    metric: '80%',
     metricLabel: '作業時間削減',
   },
   {
-    icon: Factory,
-    category: '製造業',
-    title: 'AI議事録・レポート生成',
-    description: '会議音声からAIで議事録を自動生成し、アクションアイテムを抽出するシステムを開発。Claude APIを活用し、高品質な要約と構造化されたレポートを数分で作成。',
-    results: ['議事録作成 95%効率化', '週10時間の時間創出', '情報共有の迅速化'],
-    tags: ['Claude', 'AI音声処理', 'Automation'],
-    metric: '95%',
-    metricLabel: '効率化達成',
-  },
-  {
     icon: Briefcase,
-    category: 'コンサルティング',
-    title: 'プロンプトエンジニアリング研修',
-    description: '企業向けのAI活用研修プログラムを設計・実施。実務で使えるプロンプトテンプレートの作成方法から、業務へのAI導入戦略まで、実践的なスキルを習得できる研修を提供。',
-    results: ['参加者満足度 98%', '業務効率 +40%', '社内AI活用 3倍増'],
-    tags: ['研修', 'プロンプト設計', 'ChatGPT'],
-    metric: '98%',
-    metricLabel: '満足度',
+    category: '中小企業',
+    title: 'Google Workspace導入・業務自動化',
+    description: 'Google Workspaceの導入支援から、GASを用いた業務自動化まで一貫サポート。スプレッドシート連携、メール自動送信、データ集計の自動化など、日々の業務を効率化するツールを構築。',
+    tags: ['Google Workspace', 'GAS', '業務自動化'],
+    metricLabel: '業務効率化',
   },
 ]
 
@@ -71,7 +63,7 @@ export default function Cases() {
             確かな成果
           </h2>
           <p className="text-navy-600 max-w-2xl mx-auto leading-relaxed">
-            様々な業界のお客様と共に、AIを活用した課題解決に取り組んできました。
+            新規事業の立ち上げから、既存業務のDX・自動化まで、様々な業界の課題解決に取り組んできました。
             <br className="hidden md:block" />
             以下は代表的なプロジェクト事例です。
           </p>
@@ -88,19 +80,6 @@ export default function Cases() {
               whileHover={{ y: -5 }}
               className="group relative p-8 rounded-3xl bg-white border border-navy-100 shadow-lg shadow-navy-900/5 hover:shadow-2xl hover:border-navy-200 transition-all duration-500"
             >
-              {/* Metric badge */}
-              <div className="absolute top-8 right-8">
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={isInView ? { scale: 1 } : { scale: 0 }}
-                  transition={{ delay: 0.3 + i * 0.1, type: 'spring' }}
-                  className="flex items-center gap-1 px-3 py-1.5 rounded-full bg-gradient-to-r from-navy-500 to-navy-600 text-white"
-                >
-                  <TrendingUp className="w-3 h-3" />
-                  <span className="text-sm font-bold">{caseItem.metric}</span>
-                </motion.div>
-              </div>
-
               {/* Header */}
               <div className="flex items-start gap-4 mb-6">
                 <div className="w-12 h-12 rounded-xl bg-navy-50 border border-navy-100 flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-navy-500 group-hover:to-navy-700 transition-all duration-300">
@@ -120,18 +99,6 @@ export default function Cases() {
               <p className="text-sm text-navy-600 leading-relaxed mb-6">
                 {caseItem.description}
               </p>
-
-              {/* Results */}
-              <div className="flex flex-wrap gap-2 mb-6">
-                {caseItem.results.map((result) => (
-                  <span
-                    key={result}
-                    className="px-3 py-1.5 text-xs font-medium bg-navy-50 text-navy-600 rounded-full border border-navy-100"
-                  >
-                    {result}
-                  </span>
-                ))}
-              </div>
 
               {/* Tags */}
               <div className="flex flex-wrap gap-2 pt-6 border-t border-navy-100">
@@ -173,7 +140,7 @@ export default function Cases() {
               href="#contact"
               className="inline-flex items-center gap-2 px-8 py-4 bg-white text-navy-700 font-medium rounded-full hover:bg-navy-50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
             >
-              <span>無料相談を予約する</span>
+              <span>お問い合わせ</span>
               <ArrowUpRight className="w-4 h-4" />
             </a>
           </div>

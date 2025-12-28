@@ -6,6 +6,7 @@ const navItems = [
   { href: '#about', label: 'About' },
   { href: '#services', label: 'Services' },
   { href: '#cases', label: 'Cases' },
+  { href: '#google-workspace', label: 'Google Workspace' },
   { href: '#contact', label: 'Contact' },
 ]
 

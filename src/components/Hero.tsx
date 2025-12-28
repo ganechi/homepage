@@ -19,13 +19,13 @@ export default function Hero() {
       {/* Marquee background */}
       <div className="absolute inset-0 flex flex-col justify-center pointer-events-none opacity-30 overflow-hidden">
         <MarqueeText
-          items={['AI DEVELOPMENT', 'PROMPT ENGINEERING', 'BUSINESS AUTOMATION']}
+          items={['AI DEVELOPMENT', 'PROMPT ENGINEERING', 'BUSINESS AUTOMATION', 'DX CONSULTING']}
           direction="left"
           speed={40}
           className="mb-8"
         />
         <MarqueeText
-          items={['NEW BUSINESS', 'DIGITAL TRANSFORMATION', 'INNOVATION']}
+          items={['DIGITAL TRANSFORMATION', 'WORKFLOW AUTOMATION', 'NEW BUSINESS', 'INNOVATION']}
           direction="right"
           speed={35}
         />
@@ -55,7 +55,7 @@ export default function Hero() {
             >
               <span className="block text-navy-900">AIの力で、</span>
               <span className="block mt-2">
-                <span className="text-gradient">新規事業</span>
+                <span className="text-gradient">ビジネス変革</span>
                 <span className="text-navy-900">を加速する</span>
               </span>
             </motion.h1>
@@ -67,9 +67,9 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-lg text-navy-600 max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed"
             >
-              プロンプトエンジニアリングからAIプロダクト開発まで。
+              新規事業の立ち上げから、既存業務のDX・自動化まで。
               <br className="hidden md:block" />
-              企業・個人・教育機関の課題を、最先端のAI技術で解決します。
+              企業の課題を、最先端のAI技術で解決します。
             </motion.p>
 
             {/* CTA Buttons */}
